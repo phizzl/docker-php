@@ -1,4 +1,4 @@
-FROM phizzl/ansible:latest
+FROM phizzl/ansible:ubuntu-xenial
 LABEL maintainer "Phizzl <the@phizzl.de>"
 
 ADD playbook.yml /tmp/playbook.yml

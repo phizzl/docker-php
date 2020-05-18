@@ -1,6 +1,10 @@
 ---
 - hosts: localhost
   tasks:
+    - name: Install OpenSSL deps
+      pip:
+        name: pyOpenSSL
+        state: present
 
     - name: "Add Apache repository"
       apt_repository:
@@ -24,6 +28,10 @@
         - "http2"
         - "actions"
         - "php7.4"
+        - "ssl"
+
+    - name: Enable Apache default sites
+      command: "a2ensite 000-default default-ssl"
 
     - name: Remove useless packages from the cache
       apt:

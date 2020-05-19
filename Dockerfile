@@ -8,6 +8,9 @@ ADD playbook.yml /tmp/playbook.yml
 
 RUN sudo ansible-playbook -vv /tmp/playbook.yml
 
+RUN  sudo usermod -o -u $(id -u docker) www-data && \
+     sudo groupmod -o -g $(id -g docker) www-data
+
 ADD sites-available/000-default.conf /etc/apache2/sites-available/000-default.conf
 ADD sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
 

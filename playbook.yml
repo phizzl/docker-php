@@ -16,8 +16,8 @@
         name: "{{ item }}"
       loop:
         - "apache2"
-        - "php7.4-fpm"
-        - "libapache2-mod-php7.4"
+        - "php7.3-fpm"
+        - "libapache2-mod-php7.3"
 
     - name: "Enable Apache module"
       command: "a2enmod {{ item }}"
@@ -27,7 +27,7 @@
         - "deflate"
         - "http2"
         - "actions"
-        - "php7.4"
+        - "php7.3"
         - "ssl"
 
     - name: Enable Apache default sites

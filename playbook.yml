@@ -33,6 +33,14 @@
     - name: Enable Apache default sites
       command: "a2ensite 000-default default-ssl"
 
+    - name: Change ownership of /var/www
+      file:
+        path: /var/www
+        state: directory
+        owner: www-data
+        group: www-data
+        recurse: yes
+
     - name: Remove useless packages from the cache
       apt:
         autoclean: yes

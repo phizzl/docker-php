@@ -41,6 +41,12 @@
         group: www-data
         recurse: yes
 
+    - name: Change owner of Snakeoil key
+      file:
+        path: /etc/ssl/private/ssl-cert-snakeoil.key
+        state: file
+        owner: www-data
+
     - name: Remove useless packages from the cache
       apt:
         autoclean: yes

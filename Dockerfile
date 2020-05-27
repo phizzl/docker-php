@@ -1,4 +1,4 @@
-FROM phizzl/php:7.4-ubuntu-xenial
+FROM phizzl/php:7.2-ubuntu-xenial
 LABEL maintainer "Phizzl <the@phizzl.de>"
 
 ENV APACHE_RUN_USER=docker
@@ -18,6 +18,6 @@ EXPOSE 80 443
 
 WORKDIR /var/www/html
 
-VOLUME ["/var/www/html", "/etc/php/7.4/apache2/conf.d"]
+VOLUME ["/var/www/html", "/etc/php/7.2/apache2/conf.d"]
 
 CMD ["sudo", "apache2ctl", "-D", "FOREGROUND"]

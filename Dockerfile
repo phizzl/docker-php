@@ -1,6 +1,5 @@
-FROM phizzl/ansible:2.10
+FROM phizzl/php:7.4-cli
 LABEL maintainer "Phizzl <the@phizzl.it>"
 
-ADD playbook.yml /tmp/playbook.yml
-
-RUN ansible-playbook -vv /tmp/playbook.yml
+CMD ["php-fpm"]
+ENTRYPOINT ["docker-php-entrypoint"]

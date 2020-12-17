@@ -89,6 +89,3 @@
 
     - name: "Update composer"
       command: "composer self-update --stable"
-
-    - name: "Install composer plugin prestissimo"
-      command: "composer global require hirak/prestissimo"
